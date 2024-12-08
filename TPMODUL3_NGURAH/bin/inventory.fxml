@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="InventoryController">
+    <children>
+        <!-- Tabel untuk menampilkan album -->
+        <TableView fx:id="tableView" layoutX="50.0" layoutY="50.0" prefHeight="300.0" prefWidth="500.0">
+            <columns>
+                <TableColumn fx:id="columnAlbum" prefWidth="150.0" text="Album Name" />
+                <TableColumn fx:id="columnArtist" prefWidth="150.0" text="Artist" />
+                <TableColumn fx:id="columnAvailable" prefWidth="100.0" text="Available" />
+                <TableColumn fx:id="columnTotal" prefWidth="100.0" text="Total" />
+            </columns>
+        </TableView>
+
+        <!-- Form untuk memasukkan dan mengubah data album -->
+        <VBox layoutX="600.0" layoutY="50.0" spacing="10">
+            <!-- Label dan TextField untuk Album Name -->
+            <VBox spacing="5">
+                <Text text="Album Name:" />
+                <TextField fx:id="albumField" prefWidth="150.0" promptText="Enter Album Name" />
+            </VBox>
+
+            <!-- Label dan TextField untuk Artist -->
+            <VBox spacing="5">
+                <Text text="Artist:" />
+                <TextField fx:id="artistField" prefWidth="150.0" promptText="Enter Artist" />
+            </VBox>
+
+            <!-- Label dan TextField untuk Total -->
+            <VBox spacing="5">
+                <Text text="Total:" />
+                <TextField fx:id="totalField" prefWidth="100.0" promptText="Enter Total" />
+            </VBox>
+
+            <!-- Label dan TextField untuk Available -->
+            <VBox spacing="5">
+                <Text text="Available:" />
+                <TextField fx:id="availableField" prefWidth="100.0" promptText="Enter Available" />
+            </VBox>
+
+            <!-- Label dan TextField untuk Rented -->
+            <VBox spacing="5">
+                <Text text="Rented:" />
+                <TextField fx:id="rentedField" prefWidth="100.0" promptText="Enter Rented" />
+            </VBox>
+        </VBox>
+
+        <!-- Tombol untuk Add, Update, Delete -->
+        <HBox layoutX="600.0" layoutY="350.0" spacing="10">
+            <Button onAction="#addAlbum" text="Add" />
+            <Button onAction="#updateAlbum" text="Update" />
+            <Button onAction="#deleteAlbum" text="Delete" />
+        </HBox>
+
+        <!-- Tombol Rent Selected di bawah kiri tabel -->
+        <Button layoutX="50.0" layoutY="350.0" onAction="#rentAlbum" text="Rent Selected" />
+    </children>
+</AnchorPane>
